@@ -6,13 +6,9 @@ import { Contacto } from './Componentes/pages/Contacto';
 
 function App() {
   return (
-   <>
-
-  <Home />
-    
-
-  
-  </>  
+   <> 
+    <Home />
+   </>  
   );
 }
 
