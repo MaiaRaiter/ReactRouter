@@ -1,7 +1,5 @@
-import logo from './logo.svg';
-import './App.css';
 import Home from './Componentes/pages/Home';
-import { Producto } from './Componentes/pages/Producto';
+import Productos from './Componentes/pages/Productos';
 import { Contacto } from './Componentes/pages/Contacto';
 
 function App() {
