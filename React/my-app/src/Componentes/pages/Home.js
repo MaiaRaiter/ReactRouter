@@ -55,12 +55,20 @@ export default function Home() {
             <i className="icon icon-chevron-right"></i>
           </button>
           <div className="swiper main-swiper">
+          
             <div className="swiper-wrapper">
+            
               <div className="swiper-slide Banner1" >
+              <img src="images/banner1.jpg"  className="product-image"/>
                 <div className="banner-content">
+                
                   <div className="container">
+                  
                     <div className="row">
                       <div className="col-md-6">
+                      <div className="image-holder">
+                        
+                      </div>
                         <h2 className="banner-title">Summer Collection</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu feugiat amet, libero ipsum enim pharetra hac.</p>
 
@@ -94,82 +102,160 @@ export default function Home() {
               <h2 className="section-title">Los mejores 6 Productos</h2>
 
 
-              <div class="row d-flex flex-wrap">
-                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                      <div class="image-holder">
-                        <img src="images/selling-products1.jpg" alt="Books" class="product-image"/>
+              <div className='row d-flex flex-wrap'>
+                    <div className="product-item col-lg-4 col-md-6 col-sm-6">
+                      <div className="image-holder">
+                        <img src="images/selling-products1.jpg" alt="Books" className="product-image"/>
                       </div>
-                      <div class="cart-concern">
-                        <div class="cart-button d-flex justify-content-between align-items-center">
-                          <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i>
+                      <div className="cart-concern">
+                        <div className="cart-button d-flex justify-content-between align-items-center">
+                          <button type="button" className="btn-wrap cart-link d-flex align-items-center">add to cart <i className="icon icon-arrow-io"></i>
                           </button>
-                          <button type="button" class="view-btn tooltip
+                          <button type="button" className="view-btn tooltip
                               d-flex">
-                            <i class="icon icon-screen-full"></i>
-                            <span class="tooltip-text">Quick view</span>
+                            <i className="icon icon-screen-full"></i>
+                            <span className="tooltip-text">Quick view</span>
                           </button>
-                          <button type="button" class="wishlist-btn">
-                            <i class="icon icon-heart"></i>
+                          <button type="button" className="wishlist-btn">
+                            <i className="icon icon-heart"></i>
                           </button>
                         </div>
                       </div>
-                      <div class="product-detail">
-                        <h3 class="product-title">
+                      <div className="product-detail">
+                        <h3 className="product-title">
                           <a href="single-product.html">Half sleeve T-shirt</a>
                         </h3>
-                        <div class="item-price text-primary">$40.00</div>
+                        <div className="item-price text-primary">$40.00</div>
                       </div>
                     </div>
                     
-                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                      <div class="image-holder">
-                        <img src="images/selling-products1.jpg" alt="Books" class="product-image"/>
+                    <div className="product-item col-lg-4 col-md-6 col-sm-6">
+                      <div className="image-holder">
+                        <img src="images/selling-products1.jpg" alt="Books" className="product-image"/>
                       </div>
-                      <div class="cart-concern">
-                        <div class="cart-button d-flex justify-content-between align-items-center">
-                          <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i>
+                      <div className="cart-concern">
+                        <div className="cart-button d-flex justify-content-between align-items-center">
+                          <button type="button" className="btn-wrap cart-link d-flex align-items-center">add to cart <i className="icon icon-arrow-io"></i>
                           </button>
-                          <button type="button" class="view-btn tooltip
+                          <button type="button" className="view-btn tooltip
                               d-flex">
-                            <i class="icon icon-screen-full"></i>
-                            <span class="tooltip-text">Quick view</span>
+                            <i className="icon icon-screen-full"></i>
+                            <span className="tooltip-text">Quick view</span>
                           </button>
-                          <button type="button" class="wishlist-btn">
-                            <i class="icon icon-heart"></i>
+                          <button type="button" className="wishlist-btn">
+                            <i className="icon icon-heart"></i>
                           </button>
                         </div>
                       </div>
-                      <div class="product-detail">
-                        <h3 class="product-title">
+                      <div className="product-detail">
+                        <h3 className="product-title">
                           <a href="single-product.html">Half sleeve T-shirt</a>
                         </h3>
-                        <div class="item-price text-primary">$40.00</div>
+                        <div className="item-price text-primary">$40.00</div>
                       </div>
                     </div>
 
-                    <div class="product-item col-lg-4 col-md-6 col-sm-6">
-                      <div class="image-holder">
-                        <img src="images/selling-products1.jpg" alt="Books" class="product-image"/>
+                    <div className="product-item col-lg-4 col-md-6 col-sm-6">
+                      <div className="image-holder">
+                        <img src="images/selling-products1.jpg" alt="Books" className="product-image"/>
                       </div>
-                      <div class="cart-concern">
-                        <div class="cart-button d-flex justify-content-between align-items-center">
-                          <button type="button" class="btn-wrap cart-link d-flex align-items-center">add to cart <i class="icon icon-arrow-io"></i>
+                      <div className="cart-concern">
+                        <div className="cart-button d-flex justify-content-between align-items-center">
+                          <button type="button" className="btn-wrap cart-link d-flex align-items-center">add to cart <i className="icon icon-arrow-io"></i>
                           </button>
-                          <button type="button" class="view-btn tooltip
+                          <button type="button" className="view-btn tooltip
                               d-flex">
-                            <i class="icon icon-screen-full"></i>
-                            <span class="tooltip-text">Quick view</span>
+                            <i className="icon icon-screen-full"></i>
+                            <span className="tooltip-text">Quick view</span>
                           </button>
-                          <button type="button" class="wishlist-btn">
-                            <i class="icon icon-heart"></i>
+                          <button type="button" className="wishlist-btn">
+                            <i className="icon icon-heart"></i>
                           </button>
                         </div>
                       </div>
-                      <div class="product-detail">
-                        <h3 class="product-title">
+                      <div className="product-detail">
+                        <h3 className="product-title">
                           <a href="single-product.html">Half sleeve T-shirt</a>
                         </h3>
-                        <div class="item-price text-primary">$40.00</div>
+                        <div className="item-price text-primary">$40.00</div>
+                      </div>
+                    </div>
+
+                    <div className="product-item col-lg-4 col-md-6 col-sm-6">
+                      <div className="image-holder">
+                        <img src="images/selling-products1.jpg" alt="Books" className="product-image"/>
+                      </div>
+                      <div className="cart-concern">
+                        <div className="cart-button d-flex justify-content-between align-items-center">
+                          <button type="button" className="btn-wrap cart-link d-flex align-items-center">add to cart <i className="icon icon-arrow-io"></i>
+                          </button>
+                          <button type="button" className="view-btn tooltip
+                              d-flex">
+                            <i className="icon icon-screen-full"></i>
+                            <span className="tooltip-text">Quick view</span>
+                          </button>
+                          <button type="button" className="wishlist-btn">
+                            <i className="icon icon-heart"></i>
+                          </button>
+                        </div>
+                      </div>
+                      <div className="product-detail">
+                        <h3 className="product-title">
+                          <a href="single-product.html">Half sleeve T-shirt</a>
+                        </h3>
+                        <div className="item-price text-primary">$40.00</div>
+                      </div>
+                    </div>
+
+                    <div className="product-item col-lg-4 col-md-6 col-sm-6">
+                      <div className="image-holder">
+                        <img src="images/selling-products1.jpg" alt="Books" className="product-image"/>
+                      </div>
+                      <div className="cart-concern">
+                        <div className="cart-button d-flex justify-content-between align-items-center">
+                          <button type="button" className="btn-wrap cart-link d-flex align-items-center">add to cart <i className="icon icon-arrow-io"></i>
+                          </button>
+                          <button type="button" className="view-btn tooltip
+                              d-flex">
+                            <i className="icon icon-screen-full"></i>
+                            <span className="tooltip-text">Quick view</span>
+                          </button>
+                          <button type="button" className="wishlist-btn">
+                            <i className="icon icon-heart"></i>
+                          </button>
+                        </div>
+                      </div>
+                      <div className="product-detail">
+                        <h3 className="product-title">
+                          <a href="single-product.html">Half sleeve T-shirt</a>
+                        </h3>
+                        <div className="item-price text-primary">$40.00</div>
+                      </div>
+                    </div>
+
+                    <div className="product-item col-lg-4 col-md-6 col-sm-6">
+                      <div className="image-holder">
+                        <img src="images/selling-products1.jpg" alt="Books" className="product-image"/>
+                      </div>
+                      <div className="cart-concern">
+                        <div className="cart-button d-flex justify-content-between align-items-center">
+                          <button type="button" className="btn-wrap cart-link d-flex align-items-center">add to cart <i className="icon icon-arrow-io"></i>
+                          </button>
+                          <button type="button" className="view-btn tooltip
+                              d-flex">
+                            <i className="icon icon-screen-full"></i>
+                            <span className="tooltip-text">Quick view</span>
+                          </button>
+                          <button type="button" className="wishlist-btn">
+                            <i className="icon icon-heart"></i>
+                          </button>
+                        </div>
+                      </div>
+                      <div className="product-detail">
+                        <h3 className="product-title">
+                          <a href="single-product.html">Half sleeve T-shirt</a>
+                        </h3>
+                        <div className="item-price text-primary">$40.00</div>
                       </div>
                     </div>
               </div>
