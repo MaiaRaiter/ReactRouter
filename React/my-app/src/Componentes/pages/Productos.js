@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '../Header'
 import Buscador from '../Busacdor'
+import Filtros from '../Filtros'
 
 export default function Productos  ()  {
 
@@ -29,16 +30,7 @@ export default function Productos  ()  {
 
           <section id="selling-products" class="col-md-9 product-store">
             <div class="container">
-              <ul class="tabs list-unstyled">
-                <li data-tab-target="#all" class="active tab">All</li>
-                <li data-tab-target="#shoes" class="tab">Shoes</li>
-                <li data-tab-target="#tshirts" class="tab">Tshirts</li>
-                <li data-tab-target="#pants" class="tab">Pants</li>
-                <li data-tab-target="#hoodie" class="tab">Hoodie</li>
-                <li data-tab-target="#outer" class="tab">Outer</li>
-                <li data-tab-target="#jackets" class="tab">Jackets</li>
-                <li data-tab-target="#accessories" class="tab">Accessories</li>
-              </ul>
+              <Filtros/>
 
 
               <div class="tab-content">
@@ -981,67 +973,7 @@ export default function Productos  ()  {
           <aside class="col-md-3">
 
             <Buscador/>
-
-            <div class="sidebar">
-              
-              <div class="widgets widget-product-tags">
-                <h5 class="widget-title">Tags</h5>
-                <ul class="product-tags sidebar-list list-unstyled">
-                  <li class="tags-item">
-                    <a href="">White</a>
-                  </li>
-                  <li class="tags-item">
-                    <a href="">Cheap</a>
-                  </li>
-                  <li class="tags-item">
-                    <a href="">Branded</a>
-                  </li>
-                  <li class="tags-item">
-                    <a href="">Modern</a>
-                  </li>
-                  <li class="tags-item">
-                    <a href="">Simple</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="widgets widget-product-brands">
-                <h5 class="widget-title">Brands</h5>
-                <ul class="product-tags sidebar-list list-unstyled">
-                  <li class="tags-item">
-                    <a href="">Nike</a>
-                  </li>
-                  <li class="tags-item">
-                    <a href="">Adidas</a>
-                  </li>
-                  <li class="tags-item">
-                    <a href="">Puma</a>
-                  </li>
-                  <li class="tags-item">
-                    <a href="">Spike</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="widgets widget-price-filter">
-                <h5 class="widget-title">Filter By Price</h5>
-                <ul class="product-tags sidebar-list list-unstyled">
-                  <li class="tags-item">
-                    <a href="">Less than $10</a>
-                  </li>
-                  <li class="tags-item">
-                    <a href="">$10- $20</a>
-                  </li>
-                  <li class="tags-item">
-                    <a href="">$20- $30</a>
-                  </li>
-                  <li class="tags-item">
-                    <a href="">$30- $40</a>
-                  </li>
-                  <li class="tags-item">
-                    <a href="">$40- $50</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
+           
           </aside>
           
         </div>        
