@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
 export default function Producto({producto}) {
   return (
@@ -21,9 +22,9 @@ export default function Producto({producto}) {
                         </div>
                       </div>
                       <div className="product-detail">
-                        <h3 className="product-title">
-                          <a href="single-product.html">{producto.title}</a>
-                        </h3>
+                      <Link to={"/DetalleProductos"}>     <h3 className="product-title">
+                        <a href="single-product.html">{producto.title}</a>
+                        </h3></Link>
                         <div className="item-price text-primary">${producto.price}</div>
                       </div>
                     </div>
