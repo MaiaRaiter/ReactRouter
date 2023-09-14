@@ -1,20 +1,18 @@
-import React from 'react';
+import React from 'react'
 
-export default function Producto() {
+export default function Producto({producto}) {
   return (
-    <div >
-        
-                    <div class='HACER UN MAP'>
-                      <div className="image-holder">
-                        <img src="images/product-item1.jpg" alt="Books" className="product-image" />
-                      </div>
-                      <div className="cart-concern">
+    <div className="product-item col-lg-4 col-md-6 col-sm-6">
+      <div className="image-holder">
+      <div key={producto.id}>
+        <img src={producto.thumbnail} alt="Books" className="product-image"/>
+        <div className="cart-concern">
                         <div className="cart-button d-flex justify-content-between align-items-center">
                           <button type="button" className="btn-wrap cart-link d-flex align-items-center">add to cart <i className="icon icon-arrow-io"></i>
                           </button>
                           <button type="button" className="view-btn tooltip
-                        d-flex">
-                           
+                              d-flex">
+                            <i className="icon icon-screen-full"></i>
                             <span className="tooltip-text">Quick view</span>
                           </button>
                           <button type="button" className="wishlist-btn">
@@ -24,11 +22,13 @@ export default function Producto() {
                       </div>
                       <div className="product-detail">
                         <h3 className="product-title">
-                          <a href="single-product.html">Full sleeve cover shirt</a>
+                          <a href="single-product.html">{producto.title}</a>
                         </h3>
-                        <span className="item-price text-primary">$40.00</span>
+                        <div className="item-price text-primary">${producto.price}</div>
                       </div>
                     </div>
-    </div>
-  );
+         
+      </div>
+      </div>
+  )
 }
