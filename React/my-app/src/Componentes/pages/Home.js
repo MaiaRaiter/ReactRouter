@@ -39,7 +39,7 @@ export default function Home() {
 
 
               <div className='row d-flex flex-wrap'>
-                 <ProductosListado products={products}  />
+                 <ProductosListado products={products.slice(0, 6)}  />
               </div>
             </div>
             
