@@ -1,22 +1,31 @@
-import React from 'react'
+import React, {useEffect, useState} from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
-export default function DetalleProductos  ()  {
+
+ export default function DetalleProductos () {
+    const [product, setProduct] = useState(null);
+    const {id}=useParams()
+    useEffect(() => {
+      axios
+        .get("https://dummyjson.com/products/" + id)
+        .then((result) => {
+          setProduct(result.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+  
+    }, []);
 
     return (
         <>
-            <body>
-                <div  className="page-heading" id="top">
-                <div  className="container">
-                    <div  className="row">
-                        <div  className="col-lg-12">
-                            <div  className="inner-content">
-                                <h2>Single Product Page</h2>
-                                <span>Awesome &amp; Creative HTML CSS layout by TemplateMo</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {!product ? (
+                <div>loading</div>
+            ) : (
+
+
+
             
 
 
@@ -26,7 +35,7 @@ export default function DetalleProductos  ()  {
                     <div  className="row">
                     <div  className="col-lg-4">
                         <div  className="right-content">
-                            <h4>New Green Jacket</h4>
+                            <h4>{product.name}</h4>
                             <span  className="price">$75.00</span>
                             <ul  className="stars">
                                 <li><i  className="fa fa-star"></i></li>
@@ -71,7 +80,8 @@ export default function DetalleProductos  ()  {
                    
                 </div>
             </section>  
-        </body>
+       
+        )}
     </>
 
     );
