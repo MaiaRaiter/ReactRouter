@@ -1,11 +1,11 @@
 import React from "react";
 import Producto from "./Producto";
 
-const ProductosListado = ({products}) => {
+const ProductosListado = ({producto}) => {
   
   return (
     <>    
-    {products.map((producto) => (
+    {producto.map((producto) => (
       <Producto producto={producto} />           
     ))}
     </>
