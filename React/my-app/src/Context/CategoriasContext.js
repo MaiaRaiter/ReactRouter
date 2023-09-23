@@ -5,13 +5,13 @@ export const CategoriasContext = createContext();
 
 const CategoriasProvider = (props) => {
 
-  const [categorias, setCategorias] = useState([]);
+  const [categories, setCategories] = useState([]);
 
   useEffect(() => {
     axios
       .get("https://dummyjson.com/products/categories")
       .then((result) => {
-        setCategorias(result.data);
+        setCategories(result.data);
       })
       .catch((error) => {
         console.log(error);
@@ -22,7 +22,7 @@ const CategoriasProvider = (props) => {
     return (
         <CategoriasContext.Provider
           value={{
-            categorias,
+            categories,
           }}
         >
           {props.children}

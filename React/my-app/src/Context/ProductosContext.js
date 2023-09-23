@@ -4,26 +4,25 @@ import axios from "axios";
 export const ProductosContext = createContext();
 
 const ProductosProvider = (props) => {
-  const [productos, setProductos] = useState([]);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
 
     axios
-      .get("https://dummyjson.com/Products")
+      .get("https://dummyjson.com/products")
       .then((result) => {
-        setProductos(result.data.Products);        
+        setProducts(result.data.products); 
+        console.log(result.data.products);       
       })
       .catch((error) => {
         console.log(error);
       });
     
-  }, []);  
+  }, [products]);  
 
   return (
     <ProductosContext.Provider
-      value={{
-        productos
-      }}
+      value={products}
     >
       {props.children}
     </ProductosContext.Provider>

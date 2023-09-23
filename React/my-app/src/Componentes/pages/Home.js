@@ -22,7 +22,7 @@ export default function Home() {
         console.log(error);
       });
 
-  }, []);
+  }, [products]);
 
   return (
     <>

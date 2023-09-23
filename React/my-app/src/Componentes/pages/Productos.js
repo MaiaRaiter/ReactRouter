@@ -1,40 +1,55 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Header from '../Header'
-import Filtros from '../Filtros'
 import Footer from '../Footer'
 import ProductosListado from '../ProductosListado'
 import Producto from '../Producto'
-import { ProductosContext } from '../../context/ProductosContext'
-import { CategoriasContext } from '../../context/CategoriasContext'
+import { ProductosContext } from '../../Context/ProductosContext'
 import FilterOption from '../FilterOption'
 import axios from 'axios' 
 
 export default function Productos() {
 
-  const { Productos } = useContext(ProductosContext); 
-  const { categorias } = useContext(CategoriasContext);
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+
+    axios
+      .get("https://dummyjson.com/products")
+      .then((result) => {
+        setProducts(result.data.products);      
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    
+  }, []); 
+
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("https://dummyjson.com/products/categories")
+      .then((result) => {
+        setCategories(result.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  //const { categorias } = useContext(CategoriasContext);
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState([]); 
 
-  setData(Productos);
-  setFilter(Productos);
+  setData(products);
+  //setFilter(products);
 
   const filterProduct = (category) => {
     const updatedList = data.filter((x) => x.category === category);
     setFilter(updatedList);
-  }
+}
 
-  const filterByName = (e) => {
-
-    axios
-        .get("https://dummyjson.com/products/search?q=" + e.target.value)
-        .then((result) => {
-
-            setFilter(result.data.products)
-
-    })
-
-  }
+ 
 
   return (
     <>
@@ -62,26 +77,12 @@ export default function Productos() {
             <section id="selling-Productos" class="col-md-9 product-store">
               <div class="container">
 
-                <Filtros />
-                <FilterOption onClickFunction={() => setFilter(data)} text="All" />
-
-                 {categorias.map((categoria, index) => {
-
-                   return (
-                   <>
-
-                    <FilterOption onClickFunction={() => filterProduct(categoria)} text={categoria} key={index} />
-
-                    </>)
-
-                    })}
               
-
                 <div class="tab-content">
                   <div id="all" data-tab-content class="active">
                     <div class="row d-flex flex-wrap">
 
-                      <ProductosListado Productos={Productos} />
+                      <ProductosListado products={products} />
 
                     </div>
                   </div>
@@ -90,23 +91,31 @@ export default function Productos() {
             </section>
 
             <aside class="col-md-3">
-            <div>
-              <input onChange={(e) => filterByName(e)} id="inputFiltro" type='text' placeholder='search...' autoComplete='off' className='searchBar' />
-            </div>
+            
+            {categories.map((categoria, index) => {
 
+              return (
+                  <>
+
+                      <FilterOption onClickFunction={() => filterProduct(categoria)} text={categoria} key={index} />
+
+                  </>)
+
+            })}
             
             </aside>
 
           </div>
           <div className="col-md-9 py-md-3">
-                        
-                        <div className="row">
-                            {filter.map((producto) => {
+
+          <div className="row">
+                            {filter.map((product) => {
                                 return (
-                                   <Producto producto={producto}></Producto>
+                                   <Producto product={product}></Producto>
                                 )
                             })}
                         </div>
+                      
 
           </div>
         </div>
