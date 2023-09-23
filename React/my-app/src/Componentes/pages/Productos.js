@@ -3,30 +3,27 @@ import Header from '../Header'
 import Footer from '../Footer'
 import ProductosListado from '../ProductosListado'
 import Producto from '../Producto'
-import { ProductosContext } from '../../Context/ProductosContext'
+//import { ProductosContext } from '../../Context/ProductosContext'
 import FilterOption from '../FilterOption'
 import axios from 'axios' 
 
 export default function Productos() {
-
-  const [products, setProducts] = useState([]);
+  //const [products, setProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [filter, setFilter] = useState([]);
+  const [data, setData] = useState([]);
 
   useEffect(() => {
-
     axios
       .get("https://dummyjson.com/products")
       .then((result) => {
-        setProducts(result.data.products);      
+        //setProducts(result.data.products);
+        setData(result.data.products);
       })
       .catch((error) => {
         console.log(error);
       });
     
-  }, []); 
-
-  const [categories, setCategories] = useState([]);
-
-  useEffect(() => {
     axios
       .get("https://dummyjson.com/products/categories")
       .then((result) => {
@@ -37,19 +34,22 @@ export default function Productos() {
       });
   }, []);
 
-  //const { categorias } = useContext(CategoriasContext);
-  const [data, setData] = useState([]);
-  const [filter, setFilter] = useState([]); 
-
-  setData(products);
-  //setFilter(products);
-
   const filterProduct = (category) => {
     const updatedList = data.filter((x) => x.category === category);
     setFilter(updatedList);
-}
+  }
 
- 
+  const filterByName = (e) => {
+
+    axios
+        .get("https://dummyjson.com/products/search?q=" + e.target.value)
+        .then((result) => {
+
+            setFilter(result.data.products)
+
+        })
+
+  }
 
   return (
     <>
@@ -76,13 +76,15 @@ export default function Productos() {
 
             <section id="selling-Productos" class="col-md-9 product-store">
               <div class="container">
-
-              
                 <div class="tab-content">
                   <div id="all" data-tab-content class="active">
                     <div class="row d-flex flex-wrap">
 
-                      <ProductosListado products={products} />
+                      {filter.map((product) => {
+                        return (
+                           <Producto product={product}></Producto>
+                        )
+                      })}
 
                     </div>
                   </div>
@@ -90,32 +92,22 @@ export default function Productos() {
               </div>
             </section>
 
-            <aside class="col-md-3">
-            
-            {categories.map((categoria, index) => {
+            <div class="col-md-3">
 
-              return (
+              <div>
+               <input onChange={(e) => filterByName(e)} id="inputFiltro" type='text' placeholder='search...' autoComplete='off' className='searchBar' />
+              </div>
+
+              <FilterOption onClickFunction={() => setFilter(data)} text="All" />
+
+              {categories.map((categoria, index) => {
+                return (
                   <>
-
-                      <FilterOption onClickFunction={() => filterProduct(categoria)} text={categoria} key={index} />
-
+                  <FilterOption onClickFunction={() => filterProduct(categoria)} text={categoria} key={index} />
                   </>)
-
-            })}
+              })}
             
-            </aside>
-
-          </div>
-          <div className="col-md-9 py-md-3">
-
-          <div className="row">
-                            {filter.map((product) => {
-                                return (
-                                   <Producto product={product}></Producto>
-                                )
-                            })}
-                        </div>
-                      
+            </div>
 
           </div>
         </div>

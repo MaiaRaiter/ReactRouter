@@ -19,4 +19,3 @@ FilterOption.propTypes = {
   text: PropTypes.string,
   onClickFunction: PropTypes.func,
 }
-
