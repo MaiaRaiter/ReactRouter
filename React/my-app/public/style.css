@@ -1938,7 +1938,7 @@ blockquote cite {
     line-height: 1em;
     letter-spacing: -0.02em;
     text-transform: capitalize;
-    color: var(--dark-color);
+    color: var(--clear-color);
 }
 .banner-content p {
     margin: 35px 0 60px;
