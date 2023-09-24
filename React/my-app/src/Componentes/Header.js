@@ -10,11 +10,10 @@ function Header() {
           <div className="container">
             <div className="row d-flex align-items-center">
               <div className="col-md-4 header-contact">
-                <p>Let's talk! <strong>+57 444 11 00 35</strong>
-                </p>
+               
               </div>
               <div className="col-md-4 shipping-purchase text-center">
-                <p>Free shipping on a purchase value of $200</p>
+               
               </div>
               <div className="col-md-4 col-sm-12 user-items">
                 <ul className="d-flex justify-content-end list-unstyled">
@@ -64,12 +63,11 @@ function Header() {
               <div className="col-lg-10 col-md-10">
                 <div className="navbar">
 
-                  <div id="main-nav" className="stellarnav d-flex justify-content-end right desktop menu-toggle bars"> 
-                    <ul className="menu-list"><a href="#" className="close-menu full"><span className="icon-close"></span>Close</a>
-
-                     <Link to="/"   className="item-anchor active"> Home  </Link>                 
-                     <Link to="/Productos"   className="item-anchor active"> Productos  </Link>    
-                     <Link to="/Contacto"   className="item-anchor active"> Contacto </Link>    
+                  <div id="main-nav" className="stellarnav d-flex justify-content-start desktop menu-toggle bars"> 
+                    <ul className="menu-list">
+                     <li><Link to="/"   className="item-anchor active"> Home  </Link></li>
+                     <li><Link to="/Productos"   className="item-anchor active"> Productos  </Link>    </li>
+                     <li><Link to="/Contacto"   className="item-anchor active"> Contacto </Link>    </li>
 
                     </ul>
                   </div>

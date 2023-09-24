@@ -1938,10 +1938,12 @@ blockquote cite {
     line-height: 1em;
     letter-spacing: -0.02em;
     text-transform: capitalize;
-    color: var(--clear-color);
+    color: white;
+   
 }
 .banner-content p {
     margin: 35px 0 60px;
+    
 }
 .main-swiper .swiper-slide {
     height: 90vh;
@@ -1949,15 +1951,18 @@ blockquote cite {
 }
 .main-swiper .container {
     max-width: 1400px;
+    text-align: center;
 }
 @media screen and (max-width: 1400px) {
   .banner-content h2.banner-title {
       font-size: 5.2em;
+      
   }
 }
 @media screen and (max-width: 1099px) {
   .banner-content h2.banner-title {
       font-size: 4.9em;
+      text-align: center;
   }
 }
 

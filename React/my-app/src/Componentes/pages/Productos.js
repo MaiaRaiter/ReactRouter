@@ -1,7 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import Header from '../Header'
 import Footer from '../Footer'
-import ProductosListado from '../ProductosListado'
 import Producto from '../Producto'
 //import { ProductosContext } from '../../Context/ProductosContext'
 import FilterOption from '../FilterOption'
@@ -55,19 +54,17 @@ export default function Productos() {
     <>
       < Header />
 
-      <section class="main-swiper swiper-wrapper swiper-slide" >
-        <img src="images/hero-image.jpg" className="product-image " />
-        <div class="container">
-
-          <div class="row">
-
-            <div class="col-md-12">
-
-              <h1 class="page-title">Productos</h1>
-
-            </div>
-          </div>
-        </div>
+      <section className="main-swiper swiper-wrapper swiper-slide Banner1" >
+        <img src="https://i.dummyjson.com/data/products/9/1.jpg" className="main-swiper swiper-wrapper swiper-slide Banner1"/>
+        <div className="banner-content">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-lg-4">
+                                <h2 className="banner-title text-align">Productos</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
       </section>
 
       <div class="shopify-grid padding-large">
