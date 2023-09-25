@@ -1,9 +1,9 @@
 import React, { useState, useContext, useEffect } from "react";
-import Header from '../Header'
-import Footer from '../Footer'
-import Producto from '../Producto'
+import Header from '../Componentes/Header'
+import Footer from '../Componentes/Footer'
+import Producto from '../Componentes/Producto'
 //import { ProductosContext } from '../../Context/ProductosContext'
-import FilterOption from '../FilterOption'
+import FilterOption from '../Componentes/FilterOption'
 import axios from 'axios' 
 
 export default function Productos() {
@@ -43,11 +43,8 @@ export default function Productos() {
     axios
         .get("https://dummyjson.com/products/search?q=" + e.target.value)
         .then((result) => {
-
             setFilter(result.data.products)
-
         })
-
   }
 
   return (
@@ -59,8 +56,8 @@ export default function Productos() {
         <div className="banner-content">
                     <div className="container">
                         <div className="row">
-                            <div className="col-lg-4">
-                                <h2 className="banner-title text-align">Productos</h2>
+                            <div className="col-md-12">
+                                <h2 className="banner-title">Productos</h2>
                             </div>
                         </div>
                     </div>

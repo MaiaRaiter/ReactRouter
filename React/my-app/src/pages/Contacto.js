@@ -1,22 +1,24 @@
 import React from 'react'
-import Footer from '../Footer.js'
-import Header from '../Header.js'
+import Footer from '../Componentes/Footer'
+import Header from '../Componentes/Header'
 
 export const Contacto = () => {
   return (
    <>
     < Header />
 
-<section className="site-banner jarallax padding-large"  >
-      <div className="container">
-        <div className="row">
-          <div className="col-md-12">
-            <h1 className="page-title">Contacto</h1>
-            
-          </div>
-        </div>
-      </div>
-    </section>
+    <section className="main-swiper swiper-wrapper swiper-slide Banner1" >
+        <img src="https://img.freepik.com/foto-gratis/apreton-manos-senal-saludo_1139-111.jpg" className="main-swiper swiper-wrapper swiper-slide Banner1"/>
+        <div className="banner-content">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-md-12">
+                                <h2 className="banner-title">Contacto</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+      </section>
 
     <section className="contact-information padding-large">
       <div className="container">

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Footer from '../Footer'
-import Header from '../Header'
+import Footer from '../Componentes/Footer'
+import Header from '../Componentes/Header'
 import "react-responsive-carousel/lib/styles/carousel.min.css" // requires a loader
-import  Carousel  from '../Carrusel'
-import ProductosListado from '../ProductosListado'
+import  Carousel  from '../Componentes/Carrusel'
+import ProductosListado from '../Componentes/ProductosListado'
 
 export default function Home() {
 

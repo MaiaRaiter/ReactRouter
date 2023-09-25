@@ -25,6 +25,8 @@ import axios from "axios";
             {!product ? (
                 <div>loading</div>
             ) : (
+
+                
  
             <section  className="section" id="product">
                 <div  className="container">

@@ -1,8 +1,8 @@
-import Home from './Componentes/pages/Home';
+import Home from '../src/pages/Home';
 import { Route, Routes } from 'react-router-dom';
-import Productos from './Componentes/pages/Productos';
-import { Contacto } from './Componentes/pages/Contacto';
-import DetalleProductos from './Componentes/pages/DetalleProductos'
+import Productos from '../src/pages/Productos';
+import { Contacto } from '../src/pages/Contacto';
+import DetalleProductos from '../src/pages/DetalleProductos'
 
 function App() {
   return (

@@ -1931,14 +1931,16 @@ blockquote cite {
     top: 145px;
     z-index: 5;
     width: 100%;
+    text-align: center;
 }
 .banner-content h2.banner-title {
-    font-size: 7.1em;
+    font-size: 8.1em;
     font-weight: 800;
-    line-height: 1em;
+    line-height: 5em;
     letter-spacing: -0.02em;
     text-transform: capitalize;
     color: white;
+    text-align: center;
    
 }
 .banner-content p {
@@ -1956,7 +1958,7 @@ blockquote cite {
 @media screen and (max-width: 1400px) {
   .banner-content h2.banner-title {
       font-size: 5.2em;
-      
+      text-align: center; 
   }
 }
 @media screen and (max-width: 1099px) {
@@ -1969,12 +1971,14 @@ blockquote cite {
 @media screen and (max-width: 768px) {
   .banner-content h2.banner-title {
       font-size: 4.5em;
+      text-align: center;
   }
 }
 
 @media screen and (max-width: 600px) {
   .banner-content h2.banner-title {
       font-size: 3.1em;
+      text-align:center;
   }
 }
 
