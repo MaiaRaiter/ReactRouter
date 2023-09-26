@@ -1,3 +1,6 @@
+//https://codervent.com/shopingo/demo/shopingo_V1/cart.html
+//https://themewagon.github.io/hexashop/single-product.html#
+
 import React, { createContext, useState, useEffect } from "react";
 import axios from "axios";
 

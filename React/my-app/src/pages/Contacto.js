@@ -1,12 +1,8 @@
 import React from 'react'
-import Footer from '../Componentes/Footer'
-import Header from '../Componentes/Header'
 
 export const Contacto = () => {
   return (
-   <>
-    < Header />
-
+   <>    
     <section className="main-swiper swiper-wrapper swiper-slide Banner1" >
         <img src="https://img.freepik.com/foto-gratis/apreton-manos-senal-saludo_1139-111.jpg" className="main-swiper swiper-wrapper swiper-slide Banner1"/>
         <div className="banner-content">
@@ -92,7 +88,6 @@ export const Contacto = () => {
         </div>
       </div>
     </section>
-< Footer/>
     </> 
   
 )  

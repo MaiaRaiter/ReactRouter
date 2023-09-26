@@ -1,6 +1,4 @@
 import React, { useState, useContext, useEffect } from "react";
-import Header from '../Componentes/Header'
-import Footer from '../Componentes/Footer'
 import Producto from '../Componentes/Producto'
 //import { ProductosContext } from '../../Context/ProductosContext'
 import FilterOption from '../Componentes/FilterOption'
@@ -18,6 +16,7 @@ export default function Productos() {
       .then((result) => {
         //setProducts(result.data.products);
         setData(result.data.products);
+        setFilter(result.data.products);
       })
       .catch((error) => {
         console.log(error);
@@ -48,11 +47,9 @@ export default function Productos() {
   }
 
   return (
-    <>
-      < Header />
-
+    <>      
       <section className="main-swiper swiper-wrapper swiper-slide Banner1" >
-        <img src="https://i.dummyjson.com/data/products/9/1.jpg" className="main-swiper swiper-wrapper swiper-slide Banner1"/>
+        <img src="https://i.dummyjson.com/data/products/9/1.jpg" className="main-swiper swiper-wrapper swiper-slide Banner1" alt="aa" />
         <div className="banner-content">
                     <div className="container">
                         <div className="row">
@@ -64,15 +61,15 @@ export default function Productos() {
                 </div>
       </section>
 
-      <div class="shopify-grid padding-large">
-        <div class="container">
-          <div class="row">
+      <div className="shopify-grid padding-large">
+        <div className="container">
+          <div className="row">
 
-            <section id="selling-Productos" class="col-md-9 product-store">
-              <div class="container">
-                <div class="tab-content">
-                  <div id="all" data-tab-content class="active">
-                    <div class="row d-flex flex-wrap">
+            <section id="selling-Productos" className="col-md-9 product-store">
+              <div className="container">
+                <div className="tab-content">
+                  <div id="all" data-tab-content className="active">
+                    <div className="row d-flex flex-wrap">
 
                       {filter.map((product) => {
                         return (
@@ -86,7 +83,7 @@ export default function Productos() {
               </div>
             </section>
 
-            <div class="col-md-3">
+            <div className="col-md-3">
 
               <div>
                <input onChange={(e) => filterByName(e)} id="inputFiltro" type='text' placeholder='search...' autoComplete='off' className='searchBar' />
@@ -105,9 +102,7 @@ export default function Productos() {
 
           </div>
         </div>
-      </div>
-
-      < Footer />
+      </div>      
     </>
   )
 }

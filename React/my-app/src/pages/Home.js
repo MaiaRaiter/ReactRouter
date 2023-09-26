@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Footer from '../Componentes/Footer'
-import Header from '../Componentes/Header'
 import "react-responsive-carousel/lib/styles/carousel.min.css" // requires a loader
 import  Carousel  from '../Componentes/Carrusel'
 import ProductosListado from '../Componentes/ProductosListado'
@@ -25,13 +23,8 @@ export default function Home() {
   }, [products]);
 
   return (
-    <>
-      <body>
-
-        < Header />
-
+    <>      
         <Carousel/>
-
         <section id="featured-products" className="product-store padding-large">
           <div className="container">
             <div className="section-header flex-wrap align-items-center justify-content-between">
@@ -44,11 +37,7 @@ export default function Home() {
             </div>
             
           </div>
-        </section>
-
-        < Footer />
-
-      </body>
+        </section>        
     </>
   )
 }
