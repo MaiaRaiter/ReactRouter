@@ -50,6 +50,20 @@ import axios from "axios";
                                <p>{product.description}</p>
                             </div>
 
+                            <div className="quantity-content">
+                                <div className="left-content">
+                                    <h6>No. of Orders</h6>
+                                </div>
+                             
+
+                                <div className="right-content">
+                                    <div className="quantity buttons_added">
+                                        <input type="button" value="-" className="minus"/><input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" className="input-text qty text" size="4" pattern="" inputmode=""/><input type="button" value="+" className="plus"/>
+                                    </div>
+                                </div>
+                            </div>
+
+
                             <div  className="quantity-content">
                             <div  className="total">
                                 <h4>Total: $210.00</h4>
@@ -59,7 +73,8 @@ import axios from "axios";
                             
                         </div>
                     
-                    </div>
+                            </div> 
+
                         <div  className="col-lg-8">
                             <div  className="left-images">
                                 <img src={'https://i.dummyjson.com/data/products/' + id + '/1.jpg'} width="50px" height="auto" />

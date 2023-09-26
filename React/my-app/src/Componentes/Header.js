@@ -25,6 +25,7 @@ function Header() {
                   <li>
                     <a href="cart.html">
                       <i className="icon icon-shopping-cart"></i>
+                      <div class="cart-badge">8</div>
                     </a>
                   </li>
                   <li>
@@ -42,7 +43,7 @@ function Header() {
             </div>
           </div>
         </nav>
-
+        
 
 
 
