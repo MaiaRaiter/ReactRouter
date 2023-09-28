@@ -73,7 +73,7 @@ export default function Productos() {
 
                       {filter.map((product) => {
                         return (
-                           <Producto product={product}></Producto>
+                           <Producto key={product.id} product={product}></Producto>
                         )
                       })}
 

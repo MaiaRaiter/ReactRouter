@@ -1,35 +1,42 @@
 //https://codervent.com/shopingo/demo/shopingo_V1/cart.html
 //https://themewagon.github.io/hexashop/single-product.html#
 
-import React, { createContext, useState, useEffect } from "react";
-import axios from "axios";
+import React, { createContext, useState } from "react";
 
-export const ProductosContext = createContext();
+export const CarritoContext = createContext();
 
-const ProductosProvider = (props) => {
-  const [products, setProducts] = useState([]);
+const CarritoProvider = (props) => {
 
-  useEffect(() => {
+    const [productos, setProductos] = useState([]);
+    const cantidadProductos = productos.length
 
-    axios
-      .get("https://dummyjson.com/products")
-      .then((result) => {
-        setProducts(result.data.products); 
-        console.log(result.data.products);       
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    const AddProduct = (producto) => {
+        setProductos([...productos,
+            producto])
+    }
+
+    const ResetCarrito = () => {
+        setProductos([])
+    }
+
+
+    return (
+        <CarritoContext.Provider
+          value={{
+            productos,
+            cantidadProductos,
+            AddProduct,
+            ResetCarrito
+          }}
+        >
+          {props.children}
+        </CarritoContext.Provider>
+      );
+
+
     
-  }, [products]);  
+}
 
-  return (
-    <ProductosContext.Provider
-      value={products}
-    >
-      {props.children}
-    </ProductosContext.Provider>
-  );  
-};
 
-export default ProductosProvider;
+
+export default CarritoProvider;
