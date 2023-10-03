@@ -7,26 +7,74 @@ export const CarritoContext = createContext();
 
 const CarritoProvider = (props) => {
 
-    const [productos, setProductos] = useState([]);
-    const cantidadProductos = productos.length
+    const [carrito, setCarrito] = useState([]);
+    const cantidadCarrito = carrito.length
 
-    const AddProduct = (producto) => {
-        setProductos([...productos,
-            producto])
+    const AddProduct = (prod) => {
+      //validar si el prod ya existe en el carrito
+      let newCarrito = [...carrito];
+
+      // Find the position (posicion) of the product in the cart
+      let posicion = newCarrito.findIndex((item) => item.id === prod.id);
+
+      if (posicion !== -1) {
+        // If the product already exists, increment the quantity
+        newCarrito[posicion].cantidad++;
+      } else {
+        // If the product doesn't exist, add it to the cart
+        newCarrito.push({ ...prod, cantidad: 1 });
+      }
+    
+      // Update the state with the modified cart
+      setCarrito(newCarrito);
     }
+/*estructura carrito
+
+[
+    {
+        producto:{
+            id: 1,
+            nombre:'iphone',
+            precio: 1500
+        },
+        cantidad: 1
+    },
+    {
+        producto:{
+            id: 2,
+            nombre:'iphone',
+            precio: 1500
+        },
+        cantidad: 4,
+        subtotal: 6000
+    }
+]*/
+
+      
+   
 
     const ResetCarrito = () => {
-        setProductos([])
+      setCarrito([])
+    }
+
+    const SumarCarrito = () => {
+      setCarrito([])
+    }
+
+    const RestarCarrito = () => {
+      setCarrito([])
     }
 
 
     return (
         <CarritoContext.Provider
           value={{
-            productos,
-            cantidadProductos,
+            carrito,
+            cantidadCarrito,
             AddProduct,
-            ResetCarrito
+            ResetCarrito,
+            SumarCarrito,
+            RestarCarrito
           }}
         >
           {props.children}

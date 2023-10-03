@@ -8,39 +8,45 @@ export default function Checkout () {
      <>
 
         <div >
-              <h1 className="section-title">Mi carrito tiene x productos------boton seguir comprando</h1>
+              <h1 classNameName="section-title">Mi carrito tiene x productos------boton seguir comprando</h1>
         </div>
 
         <table className="table">
             <thead className="thead-dark">
                 <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
                 </tr>
             </thead>
 
             <tbody>
                 <tr>
                 <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <td>FOTO</td>
+                <td>NOMBRE</td>
+                <td>
+                <div className="quantity buttons_added"><input type="button" className="minus" value="-"/><input type="number" step="1" min="1" max="" name="quantity" title="Qty" className="input-text qty text" size="4" pattern="" inputmode="" value="1"/><input type="button" className="plus" value="+"/></div>
+                </td>
+                <td>PRECIO TOTAL</td>
                 </tr>
 
                 <tr>
                 <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
                 </tr>
                 <tr>
                     
                 <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
                 </tr>
             </tbody>
         </table>

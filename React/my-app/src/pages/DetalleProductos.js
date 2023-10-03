@@ -1,10 +1,12 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useContext, useState} from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { CarritoContext } from '../Context/CarritoContext.js'
 
 
  export default function DetalleProductos () {
 
+    let {addcarrito}= useContext(CarritoContext);
     const [product, setProduct] = useState(null);
     const {id}=useParams()
 

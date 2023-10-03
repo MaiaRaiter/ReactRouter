@@ -1,11 +1,9 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Producto from '../Componentes/Producto'
-//import { ProductosContext } from '../../Context/ProductosContext'
 import FilterOption from '../Componentes/FilterOption'
 import axios from 'axios' 
 
 export default function Productos() {
-  //const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [filter, setFilter] = useState([]);
   const [data, setData] = useState([]);
@@ -14,7 +12,6 @@ export default function Productos() {
     axios
       .get("https://dummyjson.com/products")
       .then((result) => {
-        //setProducts(result.data.products);
         setData(result.data.products);
         setFilter(result.data.products);
       })
