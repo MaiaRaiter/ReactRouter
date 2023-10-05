@@ -1,7 +1,8 @@
 //https://codervent.com/shopingo/demo/shopingo_V1/cart.html
 //https://themewagon.github.io/hexashop/single-product.html#
 
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
+
 
 export const CarritoContext = createContext();
 
@@ -9,61 +10,32 @@ const CarritoProvider = (props) => {
 
     const [carrito, setCarrito] = useState([]);
     const cantidadCarrito = carrito.length
+    useEffect(() => {
+        
+      if (localStorage.getItem("carrito") != null) {
+        let storage = localStorage.getItem("carrito")
+        setCarrito(JSON.parse(storage))
+    }
+      },[])
 
     const AddProduct = (prod) => {
-      //validar si el prod ya existe en el carrito
-      let newCarrito = [...carrito];
-
-      // Find the position (posicion) of the product in the cart
-      let posicion = newCarrito.findIndex((item) => item.id === prod.id);
-
-      if (posicion !== -1) {
-        // If the product already exists, increment the quantity
-        newCarrito[posicion].cantidad++;
-      } else {
-        // If the product doesn't exist, add it to the cart
-        newCarrito.push({ ...prod, cantidad: 1 });
-      }
     
-      // Update the state with the modified cart
-      setCarrito(newCarrito);
+     setCarrito([...carrito, prod])
+     console.log(prod);
+     localStorage.setItem("carrito", JSON.stringify([...carrito, prod]))
     }
-/*estructura carrito
-
-[
-    {
-        producto:{
-            id: 1,
-            nombre:'iphone',
-            precio: 1500
-        },
-        cantidad: 1
-    },
-    {
-        producto:{
-            id: 2,
-            nombre:'iphone',
-            precio: 1500
-        },
-        cantidad: 4,
-        subtotal: 6000
-    }
-]*/
-
-      
-   
+    
 
     const ResetCarrito = () => {
       setCarrito([])
     }
 
-    const SumarCarrito = () => {
-      setCarrito([])
-    }
-
-    const RestarCarrito = () => {
-      setCarrito([])
-    }
+    const EliminarProduct = (productid) => {
+      setCarrito(
+        carrito.filter((prod) => prod.id !== productid)
+      ); 
+    };
+    
 
 
     return (
@@ -73,8 +45,7 @@ const CarritoProvider = (props) => {
             cantidadCarrito,
             AddProduct,
             ResetCarrito,
-            SumarCarrito,
-            RestarCarrito
+            EliminarProduct
           }}
         >
           {props.children}

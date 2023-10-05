@@ -5,11 +5,13 @@ import { Contacto } from '../src/pages/Contacto';
 import DetalleProductos from '../src/pages/DetalleProductos';
 import Checkout from '../src/pages/Checkout';
 import Layout from './pages/Layout';
+import CarritoProvider from './Context/CarritoContext';
 
 function App() {
   return (
-   <> 
-    <Routes>
+   <>
+  <CarritoProvider>
+        <Routes>
       <Route path="/" element={<Layout />}>
         <Route path='/' element={<Home />}> </Route>
         <Route path='/Productos' element={<Productos />}> </Route>
@@ -18,6 +20,8 @@ function App() {
         <Route path='/Checkout' element={<Checkout />}> </Route>
       </Route>
    </Routes>
+   </CarritoProvider> 
+
    
    </>  
   );

@@ -6,7 +6,7 @@ import { CarritoContext } from '../Context/CarritoContext.js'
 
  export default function DetalleProductos () {
 
-    let {addcarrito}= useContext(CarritoContext);
+    const {AddProduct}= useContext(CarritoContext);
     const [product, setProduct] = useState(null);
     const {id}=useParams()
 
@@ -69,7 +69,7 @@ import { CarritoContext } from '../Context/CarritoContext.js'
                             <div  className="quantity-content">
                             <div  className="total">
                                 <h4>Total: $210.00</h4>
-                                <div  className="main-border-button"><a href="#">Add To Cart</a></div>
+                                <div  className="main-border-button"><button onClick={() => AddProduct(product)} className="btn btn-primary">Add Product</button></div>
                             </div>
                             </div>
                             

@@ -158,4 +158,7 @@
   transition-timing-function: var(--swiper-wrapper-transition-timing-function,initial);
   box-sizing: content-box;
 }
+.ImagenTabla{
+  width: 250px;
+}
 

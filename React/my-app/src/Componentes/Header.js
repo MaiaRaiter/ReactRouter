@@ -23,7 +23,7 @@ function Header() {
                   </li>
 
                   <li>
-                      <Link to="/Checkout"   className="item-anchor active"> <i className="icon icon-shopping-cart"> <div className="cart-badge">8</div> </i> </Link>                    
+                      <Link to="/Checkout"   className="item-anchor active"> <i className="icon icon-shopping-cart"> <div className="cart-badge"></div> </i> </Link>                    
                   </li>
 
                   <li>                  

@@ -1,15 +1,26 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, useContext} from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { CarritoContext } from '../Context/CarritoContext.js';
 
 export default function Checkout () {
+
+    const {carrito}= useContext(CarritoContext);
+    const {ResetCarrito}= useContext(CarritoContext);
+    const {EliminarProduct}= useContext(CarritoContext);
+
+    console.log("en carrito" + carrito);
+ 
 
     return (
      <>
 
         <div >
-              <h1 classNameName="section-title">Mi carrito tiene x productos------boton seguir comprando</h1>
+              <h1 className="section-title">Mi carrito tiene {carrito.length} productos</h1>
         </div>
+        <div>
+            
+              <p> <div  className="main-border-button"><button onClick={() => ResetCarrito()} className="btn btn-primary">Resetear Carrito</button></div></p>
 
         <table className="table">
             <thead className="thead-dark">
@@ -23,35 +34,28 @@ export default function Checkout () {
             </thead>
 
             <tbody>
-                <tr>
-                <th scope="row">1</th>
-                <td>FOTO</td>
-                <td>NOMBRE</td>
+            {carrito.map((product, index) => (
+                <div key={index}>
+                <tr >
+                <th scope="row" >{index+1}</th>
+                <th scope="col">
+                <td><img src={product.thumbnail} className="ImagenTabla"></img></td>
+                </th>
+                
+                <td>{product.title}</td>
+                <td>${product.price}</td>
+                </tr>
                 <td>
-                <div className="quantity buttons_added"><input type="button" className="minus" value="-"/><input type="number" step="1" min="1" max="" name="quantity" title="Qty" className="input-text qty text" size="4" pattern="" inputmode="" value="1"/><input type="button" className="plus" value="+"/></div>
+                  <p> <div  className="main-border-button"><button onClick={() => EliminarProduct(product.id)} className="btn btn-danger">Eliminar Producto</button></div></p>
                 </td>
-                <td>PRECIO TOTAL</td>
-                </tr>
-
-                <tr>
-                <th scope="row">2</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                </tr>
-                <tr>
-                    
-                <th scope="row">3</th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                </tr>
+                </div>
+      ))}
+                
             </tbody>
         </table>
-
-
+          
+     
+ </div> 
     </>
  );
 }
